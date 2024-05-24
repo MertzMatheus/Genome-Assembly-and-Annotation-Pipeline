@@ -12,21 +12,20 @@ This bioinformatics pipeline aims to perform genome assembly and annotation of g
 ## Prerequisites
 To run this pipeline, you will need the following packages/programs installed on your system:
 
-** FastQC (version 0.11.8 or higher)
-Manual: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/INSTALL.txt
-** Trimmomatic (version 0.39 or higher)
-Manual: http://www.usadellab.org/cms/?page=trimmomatic
-** SPAdes (version 3.15.0 or higher)
-Manual: https://cab.spbu.ru/files/release3.15.0/manual.html
-** Prokka (version 1.14.6 or higher)
-Manual: https://github.com/tseemann/prokka/blob/master/doc/prokka.md
-** BLAST+ (version 2.10.0 or higher)
-Manual: https://www.ncbi.nlm.nih.gov/books/NBK279690/
-Python 3 (version 3.7 or higher)
-Java Runtime Environment (version 8 or higher)
+- **FastQC** (version 0.11.8 or higher)
+  - Manual: [https://www.bioinformatics.babraham.ac.uk/projects/fastqc/INSTALL.txt](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/INSTALL.txt)
+- **Trimmomatic** (version 0.39 or higher)
+  - Manual: [http://www.usadellab.org/cms/?page=trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+- **SPAdes** (version 3.15.0 or higher)
+  - Manual: [https://cab.spbu.ru/files/release3.15.0/manual.html](https://cab.spbu.ru/files/release3.15.0/manual.html)
+- **Prokka** (version 1.14.6 or higher)
+  - Manual: [https://github.com/tseemann/prokka/blob/master/doc/prokka.md](https://github.com/tseemann/prokka/blob/master/doc/prokka.md)
+- **BLAST+** (version 2.10.0 or higher)
+  - Manual: [https://www.ncbi.nlm.nih.gov/books/NBK279690/](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
+- Python 3 (version 3.7 or higher)
+- Java Runtime Environment (version 8 or higher)
+
 Ensure that all these packages are installed and configured correctly in your working environment.
-
-
 
 ## Usage Instructions
 1. Clone this repository to your working directory:
