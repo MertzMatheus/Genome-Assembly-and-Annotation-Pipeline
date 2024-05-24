@@ -25,27 +25,27 @@ Ensure that all these packages are installed and configured correctly in your wo
 ## Usage Instructions
 1. Clone this repository to your working directory:
 ```
-git clone https://github.com/your-username/genome-assembly-pipeline.git
+git clone https://github.com/MertzMatheus/genome-assembly-pipeline.git
 ```
 
 2. Navigate to the project directory:
 ```
-cd genome-assembly-pipeline
+cd Genome-Assembly-and-Annotation-Pipeline
 ```
 
-3. Edit the `genome_assembly_pipeline.sh` file and update the following parameters:
+3. Edit the `Genome_Assembly.sh` file and update the following parameters:
    - `INPUT_DIR`: Set the directory containing the input FASTQ files.
    - `OUTPUT_DIR`: Set the directory where the results will be saved.
    - Verify and update the paths to the programs, if necessary.
 
 4. Make the script executable:
 ```
-chmod +x genome_assembly_pipeline.sh
+chmod +x Genome_Assembly.sh
 ```
 
 5. Run the pipeline:
 ```
-./genome_assembly_pipeline.sh
+./Genome_Assembly.sh
 ```
 
 The pipeline will execute the steps of quality control, trimming, genome assembly, annotation, and 16S rRNA analysis. The results will be stored in the `trimmed`, `assembly`, and `annotation` directories within the `OUTPUT_DIR`.
