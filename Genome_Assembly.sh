@@ -17,7 +17,7 @@ fastqc -o $OUTPUT_DIR/trimmed $INPUT_DIR/*.fastq.gz
 
 ## Trimming
 echo "Trimming sequences using Trimmomatic..."
-java -jar /path/to/Trimmomatic-0.39/trimmomatic.jar PE \
+java -jar trimmomatic.jar PE \
      -threads 4 \
      $INPUT_DIR/*_R1_*.fastq.gz $INPUT_DIR/*_R2_*.fastq.gz \
      $OUTPUT_DIR/trimmed/*_R1_trimmed.fastq.gz $OUTPUT_DIR/trimmed/*_R1_unpaired.fastq.gz \
@@ -37,7 +37,7 @@ echo "Annotating assembled genomes using Prokka..."
 prokka --outdir $OUTPUT_DIR/annotation \
        --prefix sample \
        --threads 4 \
-       $OUTPUT_DIR/assembly/contigs.fasta
+       $OUTPUT_DIR/assembly/scaffolds.fasta
 
 ## 16S rRNA Analysis
 echo "Performing 16S rRNA analysis using BLAST..."
