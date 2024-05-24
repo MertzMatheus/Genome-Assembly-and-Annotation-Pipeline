@@ -50,6 +50,43 @@ chmod +x genome_assembly_pipeline.sh
 
 The pipeline will execute the steps of quality control, trimming, genome assembly, annotation, and 16S rRNA analysis. The results will be stored in the `trimmed`, `assembly`, and `annotation` directories within the `OUTPUT_DIR`.
 
+Trimming Adapters
+The trimming step in this pipeline uses Trimmomatic to remove Illumina adapters from the input sequences. If you have data from other sequencing platforms, such as PacBio or Nanopore, you can modify the adapter trimming step accordingly.
+
+For PacBio adapters, you can use the following Trimmomatic command:
+
+text
+
+ILLUMINACLIP:/path/to/PacBio_adapters.fa:2:30:10
+For Nanopore adapters, you can use the following Trimmomatic command:
+
+text
+
+ILLUMINACLIP:/path/to/Nanopore_adapters.fa:2:30:10
+SPAdes and Prokka Options
+The pipeline uses the default settings for SPAdes and Prokka. If you would like to customize the parameters, you can modify the corresponding commands in the genome_assembly_pipeline.sh script.
+
+For example, you can adjust the SPAdes parameters to use different assembly algorithms or enable additional features:
+
+text
+
+spades.py -o $OUTPUT_DIR/assembly \
+         -1 $OUTPUT_DIR/trimmed/*_R1_trimmed.fastq.gz \
+         -2 $OUTPUT_DIR/trimmed/*_R2_trimmed.fastq.gz \
+         --careful \
+         --cov-cutoff auto \
+         --threads 8 \
+         --memory 32
+Similarly, you can modify the Prokka parameters to include additional annotation features or change the output format:
+
+text
+
+prokka --outdir $OUTPUT_DIR/annotation \
+       --prefix sample \
+       --kingdom Bacteria \
+       --locustag SAMPLE \
+       --threads 4 \
+       $OUTPUT_DIR/assembly/contigs.fasta
 ## Credits and License
 This pipeline was developed by Matheus Mertz  and is made available under the [License Type, e.g., MIT License].
 
