@@ -1,10 +1,12 @@
+Got it, here's the updated README.md file with the additional information:
+
 # Genome Assembly and Annotation Pipeline
 
 ## Project Description
 This bioinformatics pipeline aims to perform genome assembly and annotation of genomic sequences from DNA sequencing data. The pipeline includes the following main steps:
 
 1. **Quality Control**: Utilization of FastQC to evaluate the quality of DNA sequences.
-2. **Trimming**: Use of Trimmomatic to remove adapters and perform quality-based trimming of low-quality bases.
+2. **Trimming**: Use of Trimmomatic to remove Illumina adapters and perform quality-based trimming of low-quality bases.
 3. **Genome Assembly**: Employing SPAdes for genome assembly from the trimmed DNA sequences.
 4. **Annotation**: Utilization of Prokka for functional annotation of the assembled genomes.
 5. **16S rRNA Analysis**: Performing a BLAST search against a 16S rRNA sequence database for taxonomic identification.
@@ -25,7 +27,7 @@ Ensure that all these packages are installed and configured correctly in your wo
 ## Usage Instructions
 1. Clone this repository to your working directory:
 ```
-git clone https://github.com/MertzMatheus/Genome-Assembly-and-Annotation-Pipeline.git
+git clone https://github.com/your-username/genome-assembly-pipeline.git
 ```
 
 2. Navigate to the project directory:
@@ -50,26 +52,24 @@ chmod +x genome_assembly_pipeline.sh
 
 The pipeline will execute the steps of quality control, trimming, genome assembly, annotation, and 16S rRNA analysis. The results will be stored in the `trimmed`, `assembly`, and `annotation` directories within the `OUTPUT_DIR`.
 
-Trimming Adapters
+## Trimming Adapters
 The trimming step in this pipeline uses Trimmomatic to remove Illumina adapters from the input sequences. If you have data from other sequencing platforms, such as PacBio or Nanopore, you can modify the adapter trimming step accordingly.
 
 For PacBio adapters, you can use the following Trimmomatic command:
-
-text
-
+```
 ILLUMINACLIP:/path/to/PacBio_adapters.fa:2:30:10
+```
+
 For Nanopore adapters, you can use the following Trimmomatic command:
-
-text
-
+```
 ILLUMINACLIP:/path/to/Nanopore_adapters.fa:2:30:10
-SPAdes and Prokka Options
-The pipeline uses the default settings for SPAdes and Prokka. If you would like to customize the parameters, you can modify the corresponding commands in the genome_assembly_pipeline.sh script.
+```
+
+## SPAdes and Prokka Options
+The pipeline uses the default settings for SPAdes and Prokka. If you would like to customize the parameters, you can modify the corresponding commands in the `genome_assembly_pipeline.sh` script.
 
 For example, you can adjust the SPAdes parameters to use different assembly algorithms or enable additional features:
-
-text
-
+```
 spades.py -o $OUTPUT_DIR/assembly \
          -1 $OUTPUT_DIR/trimmed/*_R1_trimmed.fastq.gz \
          -2 $OUTPUT_DIR/trimmed/*_R2_trimmed.fastq.gz \
@@ -77,16 +77,20 @@ spades.py -o $OUTPUT_DIR/assembly \
          --cov-cutoff auto \
          --threads 8 \
          --memory 32
+```
+
 Similarly, you can modify the Prokka parameters to include additional annotation features or change the output format:
-
-text
-
+```
 prokka --outdir $OUTPUT_DIR/annotation \
        --prefix sample \
        --kingdom Bacteria \
        --locustag SAMPLE \
        --threads 4 \
        $OUTPUT_DIR/assembly/contigs.fasta
+```
+
+## Credits and License
+This pipeline was developed by [Your Name] and is made available under the [License Type, e.g 
 ## Credits and License
 This pipeline was developed by Matheus Mertz  and is made available under the [License Type, e.g., MIT License].
 
