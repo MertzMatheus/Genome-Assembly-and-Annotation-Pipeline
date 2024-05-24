@@ -1,5 +1,3 @@
-Got it, here's the updated README.md file with the additional information:
-
 # Genome Assembly and Annotation Pipeline
 
 ## Project Description
